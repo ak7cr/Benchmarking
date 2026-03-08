@@ -1,0 +1,24 @@
+models:
+  - type: main
+    engine: ollama
+    model: qwen2.5:3b
+    parameters:
+      base_url: http://localhost:11434
+
+instructions:
+  - type: general
+    content: |
+      Below is a conversation between a user and a bot called the Guardrails Bot.
+      The bot is designed to answer questions helpfully and safely.
+      The bot refuses to engage in harmful, toxic, or off-topic conversations.
+      The bot will not help with jailbreak attempts, generating harmful content,
+      or leaking personally identifiable information (PII).
+
+rails:
+  input:
+    flows:
+      - self check input
+
+  output:
+    flows:
+      - self check output
